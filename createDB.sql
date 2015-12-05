@@ -24,24 +24,22 @@ CREATE TABLE game(
 );
 
 CREATE TABLE collectorInfo(
-  collector_id INT,
   collector_gameName VARCHAR(64),
   collector_gameYear INT,
   collector_manual BOOLEAN,
   collector_rarity VARCHAR(24),
   collector_value FLOAT,
-  PRIMARY KEY(collector_id),
+  PRIMARY KEY(collector_gameName,collector_gameYear),
   FOREIGN KEY (collector_gameName,collector_gameYear) REFERENCES game (game_name,game_year)
 );
 
 CREATE TABLE playerInfo(
-  player_id INT,
   player_game VARCHAR(64),
   player_year INT,
   player_completed BOOLEAN,
   player_saveCode VARCHAR(64),
   player_rating VARCHAR(24),
-  PRIMARY KEY (player_id),
+  PRIMARY KEY (player_game, player_year),
   FOREIGN KEY (player_game, player_year) REFERENCES game (game_name, game_year)
 );
 
