@@ -27,6 +27,7 @@ CREATE TABLE collectorInfo(
   collector_gameName VARCHAR(64),
   collector_gameYear INT,
   collector_manual BOOLEAN,
+  collector_condition VARCHAR(24),
   collector_rarity VARCHAR(24),
   collector_value FLOAT,
   PRIMARY KEY(collector_gameName,collector_gameYear),
